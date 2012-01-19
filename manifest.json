@@ -1,7 +1,7 @@
 {
-  "name": "Scroll to Top Bar [ohgyun]",
+  "name": "Scroll to Top Bar (3rd Edition)",
   "version": "1.0",
-  "description": "Inserts a small bar at the top of every page. You can click on this bar to return to the top of the page. Edit by ohgyun.",
+  "description": "Inserts a small bar at the top and bottom of every page. You can click on this bar to return to the top or bottom of the page.",
   "icons": {
     "128": "icon128.png",
     "48": "icon48.png"
