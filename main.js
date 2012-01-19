@@ -13,8 +13,8 @@
    * Create scroll button
    * @param {Object} config
    * @param {string} config.where 'top' or 'bottom'
-   * @param {number} config.scrollTo What pixel scroll to?
-   * @param {function} config.whenHide When does scroll button hide?
+   * @param {function: number} config.scrollTo What pixel scroll to?
+   * @param {function: boolean} config.whenHide When does scroll button hide?
    */
   function createScrollBar(config) {
     var id = 'scroll-to-' + config.where + '-chrome-extension',
@@ -26,7 +26,7 @@
         .prependTo('body')
         .click(function() {
           $(document.body).animate({
-            scrollTop: config.scrollTo
+            scrollTop: config.scrollTo()
           }, 'slow');
           $(this).fadeOut(FADE_TIME);
         })
@@ -47,14 +47,18 @@
   
   createScrollBar({
     where: 'top',
-    scrollTo: 0,
+    scrollTo: function () {
+      return 0;
+    },
     whenHide: function () {
       return $(window).scrollTop() <= THRESHOLD;
     }
   });
   createScrollBar({
     where: 'bottom',
-    scrollTo: $(document).height() - $(window).height(),
+    scrollTo: function () {
+      return $(document).height() - $(window).height();
+    },
     whenHide: function () {
       return $(window).scrollTop() >= ($(document).height() - $(window).height() - THRESHOLD); 
     }
