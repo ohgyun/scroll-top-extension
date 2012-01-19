@@ -1,0 +1,18 @@
+{
+  "name": "Scroll to Top Bar [ohgyun]",
+  "version": "1.0",
+  "description": "Inserts a small bar at the top of every page. You can click on this bar to return to the top of the page. Edit by ohgyun.",
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png"
+  }, 
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "css": [ "style.css" ],
+      "js": [ "jquery.min.js", "main.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   }
+  ],
+  "permissions": [ "tabs", "http://*/*", "https://*/*" ]
+}
